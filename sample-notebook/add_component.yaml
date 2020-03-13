@@ -1,0 +1,7 @@
+name: Simple Add Component
+description: Adds two numbers
+inputs:
+outputs:
+implementation:
+  container:
+    image: docker.io/ciscoai/simple-add-pipeline:v0.0.1
