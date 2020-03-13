@@ -15,6 +15,6 @@ spec:
           value: https://github.com/swiftdiaries/kf-app-tekton
     params:
     - name: notebook-filepath
-      value: github.com/swiftdiaries/kf-app-tekton/sample-notebook/add.ipynb
+      value: /workspace/src/sample-notebook/add.ipynb
     - name: flags
       value: ""

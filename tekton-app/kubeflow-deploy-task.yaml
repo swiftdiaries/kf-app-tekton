@@ -10,17 +10,16 @@ spec:
       default: "./pipeline/pipeline.ipynb"
     - name: version
       description: pipeline runner version to use
-      default: "latest"
+      default: "v0.0.1"
     - name: flags
       description: flags to use for the papermill command
       default: ""
     resources:
     - name: source
       type: git
-      targetPath: src/$(inputs.params.notebook-directory)
+      targetPath: /src
   steps:
   - name: build
     image: docker.io/ciscoai/pipeline-runner:$(inputs.params.version)
-    workingDir: /workspace/src/$(inputs.params.notebook-directory)
     script: |
-      papermill $(inputs.params.notebook-directory) $(inputs.params.flags)
+      papermill $(inputs.params.notebook-filepath) $(inputs.params.flags)
