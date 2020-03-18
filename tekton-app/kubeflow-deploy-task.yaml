@@ -11,9 +11,6 @@ spec:
     - name: version
       description: pipeline runner version to use
       default: "v0.0.1"
-    - name: flags
-      description: flags to use for the papermill command
-      default: ""
     resources:
     - name: source
       type: git
@@ -22,4 +19,5 @@ spec:
   - name: build
     image: docker.io/ciscoai/pipeline-runner:$(inputs.params.version)
     script: |
-      papermill $(inputs.params.notebook-filepath) $(inputs.params.flags)
+      jupyter kernelspec list
+      papermill --kernel python3 $(inputs.params.notebook-filepath) $(inputs.params.notebook-filepath)

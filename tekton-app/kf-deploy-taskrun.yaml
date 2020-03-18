@@ -16,5 +16,3 @@ spec:
     params:
     - name: notebook-filepath
       value: /workspace/src/sample-notebook/add.ipynb
-    - name: flags
-      value: ""
